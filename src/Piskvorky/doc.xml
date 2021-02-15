@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Piskvorky</name>
+    </assembly>
+    <members>
+        <member name="F:Piskvorky.FormPiskvorky.MAX">
+            <summary> Kolik značek vedle sebe znamená vítězství. </summary>
+        </member>
+        <member name="F:Piskvorky.FormPiskvorky.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Piskvorky.FormPiskvorky.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Piskvorky.FormPiskvorky.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Piskvorky.FormPiskvorky.mapa">
+            <summary> Mapa všech políček. </summary>
+        </member>
+        <member name="F:Piskvorky.FormPiskvorky.sirkaPolicka">
+            <summary> Rozměry jednoho políčka v pixelech. </summary>
+        </member>
+        <member name="F:Piskvorky.FormPiskvorky.vyskaPolicka">
+            <summary> Rozměry jednoho políčka v pixelech. </summary>
+        </member>
+        <member name="F:Piskvorky.FormPiskvorky.caraX">
+            <summary> Souřadnice čáry, která škrtá vítěznou řadu značek. </summary>
+        </member>
+        <member name="F:Piskvorky.FormPiskvorky.caraY">
+            <summary> Souřadnice čáry, která škrtá vítěznou řadu značek. </summary>
+        </member>
+        <member name="F:Piskvorky.FormPiskvorky.caraX2">
+            <summary> Souřadnice čáry, která škrtá vítěznou řadu značek. </summary>
+        </member>
+        <member name="F:Piskvorky.FormPiskvorky.caraY2">
+            <summary> Souřadnice čáry, která škrtá vítěznou řadu značek. </summary>
+        </member>
+        <member name="F:Piskvorky.FormPiskvorky.stav">
+            <summary> V jakém je hra stavu. </summary>
+        </member>
+        <member name="F:Piskvorky.FormPiskvorky.novaSirka">
+            <summary> Rozměry mapy, která se použije při nové hře. </summary>
+        </member>
+        <member name="F:Piskvorky.FormPiskvorky.novaVyska">
+            <summary> Rozměry mapy, která se použije při nové hře. </summary>
+        </member>
+        <member name="M:Piskvorky.FormPiskvorky.Sirka">
+            <summary>
+            Počet sloupců na herní mapě.
+            </summary>
+            <returns>Počet sloupců na herní mapě.</returns>
+        </member>
+        <member name="M:Piskvorky.FormPiskvorky.Vyska">
+            <summary>
+            Počet řádků na herní mapě.
+            </summary>
+            <returns>Počet řádků na herní mapě.</returns>
+        </member>
+        <member name="M:Piskvorky.FormPiskvorky.kolecko(System.Int32,System.Int32,System.Drawing.Graphics)">
+            <summary>
+            Vykreslí kolečko na zadané souřadnice.
+            </summary>
+            <param name="x">sloupec, ve kterém je vykreslované kolečko</param>
+            <param name="y">řádek, ve kterém je vykreslované kolečko</param>
+            <param name="g">plátno, které se má použít ke kreslení</param>
+        </member>
+        <member name="M:Piskvorky.FormPiskvorky.krizek(System.Int32,System.Int32,System.Drawing.Graphics)">
+            <summary>
+            Vykreslí křížek na zadané souřadnice.
+            </summary>
+            <param name="x">sloupec, ve kterém je vykreslovaný křížek</param>
+            <param name="y">řádek, ve kterém je vykreslovaný křížek</param>
+            <param name="g">plátno, které se má použít ke kreslení</param>
+        </member>
+        <member name="M:Piskvorky.FormPiskvorky.zkontrolovatKonec(System.Int32,System.Int32)">
+            <summary>
+            Zkontroluje, jeslti neskončila hra (jestli někdo nemá pět značek vedle sebe).
+            </summary>
+            <param name="x">sloupec, ve kterém je nová značka</param>
+            <param name="y">řádek, ve kterém je nová značka</param>
+        </member>
+        <member name="M:Piskvorky.FormPiskvorky.zkontrolovatSmer(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Spočítá, kolik v zadaném směru je stejných značek.
+            </summary>
+            <param name="x">výchozí sloupec</param>
+            <param name="y">výchozí řádek</param>
+            <param name="smerX">přírustek sloupce</param>
+            <param name="smerY">přírustek řádku</param>
+            <returns>kolik je v zadaném směru stejných značek</returns>
+        </member>
+        <member name="M:Piskvorky.FormPiskvorky.oznacVyhru(System.Int32,System.Int32,System.Int32,System.Int32,Piskvorky.Stav)">
+            <summary>
+            Označí výhru hráče.
+            </summary>
+            <param name="x">sloupec prvního konce vítězné řady</param>
+            <param name="y">řádek prvního konce vítězné řady</param>
+            <param name="x2">sloupec druhého konce vítězné řady</param>
+            <param name="y2">řádek druhého konce vítězné řady</param>
+            <param name="hrac">který hráč je vítěz</param>
+        </member>
+        <member name="M:Piskvorky.FormPiskvorky.panelHlavni_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Zavolá se při stisku myši. Pokud je hráč na tahu, tak umístí značku.
+            </summary>
+        </member>
+        <member name="P:Piskvorky.FormPiskvorky.HraSkoncila">
+            <summary>
+            Vrátí true, jestli hra už skončila.
+            </summary>
+        </member>
+        <member name="M:Piskvorky.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:Piskvorky.Policko">
+            <summary>
+            Znaky, které můžou být umístěny na políčku herní mapy.
+            </summary>
+        </member>
+        <member name="F:Piskvorky.Policko.PRAZDNO">
+            <summary>Nebyl umístěn žádný znak. </summary>
+        </member>
+        <member name="F:Piskvorky.Policko.KRIZEK">
+            <summary>Byl umístěn křížek. </summary>
+        </member>
+        <member name="F:Piskvorky.Policko.KOLECKO">
+            <summary>Bylo umístěno kolečko. </summary>
+        </member>
+        <member name="T:Piskvorky.Stav">
+            <summary>
+            Všechny stavy, ve který hra může být.
+            </summary>
+        </member>
+        <member name="F:Piskvorky.Stav.TAHNE1">
+            <summary>Hráč 1 je na tahu. </summary>
+        </member>
+        <member name="F:Piskvorky.Stav.TAHNE2">
+            <summary>Hráč 2 je na tahu. </summary>
+        </member>
+        <member name="F:Piskvorky.Stav.VYHRAL1">
+            <summary>Hráč 1 vyhrál hru. </summary>
+        </member>
+        <member name="F:Piskvorky.Stav.VYHRAL2">
+            <summary>Hráč 2 vyhrál hru. </summary>
+        </member>
+        <member name="F:Piskvorky.Stav.PRED_ZACATKEM">
+            <summary>Hra ještě nezačala. </summary>
+        </member>
+        <member name="T:Piskvorky.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Piskvorky.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Piskvorky.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:Piskvorky.Sitovani">
+            <summary>
+            Třída, která se stará o síťovou komunikaci.
+            </summary>
+        </member>
+        <member name="F:Piskvorky.Sitovani.pripojeni">
+            <summary>Spojení s protihráčem. </summary>
+        </member>
+        <member name="F:Piskvorky.Sitovani.pripojeno">
+            <summary>Metoda, která se má zavolat, když se někdo připojí.</summary>
+        </member>
+        <member name="F:Piskvorky.Sitovani.zruseno">
+            <summary>Metoda, která se má zavolat, když bude připojení zrušeno.</summary>
+        </member>
+        <member name="F:Piskvorky.Sitovani.tahDelegat">
+            <summary>Metoda, která se má zavolat, když protihráč udělá tah.</summary>
+        </member>
+        <member name="F:Piskvorky.Sitovani.zastaveno">
+            <summary>True, jestli hra byla zastavena.</summary>
+        </member>
+        <member name="M:Piskvorky.Sitovani.#ctor(Piskvorky.Sitovani.Volani,Piskvorky.Sitovani.Volani,Piskvorky.Sitovani.Tah)">
+            <summary>
+            Vytvoří novou instanci třídy.
+            </summary>
+            <param name="pripojeno">Metoda, která se má zavolat, když se někdo připojí.</param>
+            <param name="zruseno">Metoda, která se má zavolat, když bude připojení zrušeno.</param>
+            <param name="tahDelegat">Metoda, která se má zavolat, když protihráč udělá tah.</param>
+        </member>
+        <member name="M:Piskvorky.Sitovani.Poslouchat(System.Int32)">
+            <summary>
+            Začne očekávat připojení na zadaném portu.
+            </summary>
+            <param name="port">číslo portu</param>
+        </member>
+        <member name="M:Piskvorky.Sitovani.Poslouchani">
+            <summary>
+            Očekáva připojení na zadaném portu. Spouští se v samostatném vlákně.
+            </summary>
+        </member>
+        <member name="M:Piskvorky.Sitovani.PripojitSe(System.String,System.Int32)">
+            <summary>
+            Připojí se k zadanému počítači na zadaný port.
+            </summary>
+            <param name="pocitac">cílový počítač (jméno nebo ip adresa)</param>
+            <param name="port">číslo cílového portu</param>
+            <returns>true, jestli bylo připojení úspěšné</returns>
+        </member>
+        <member name="M:Piskvorky.Sitovani.Zrusit">
+            <summary>
+            Zruší připojení, jestli nějaké existuje.
+            </summary>
+        </member>
+        <member name="M:Piskvorky.Sitovani.tah(System.Int32,System.Int32)">
+            <summary>
+            Pošle protihráči zprávu o provedení tahu.
+            </summary>
+            <param name="x">sloupec provedeného tahu</param>
+            <param name="y">řádek provedeného tahu</param>
+        </member>
+        <member name="M:Piskvorky.Sitovani.zacitCteni">
+            <summary>
+            Spustí vlákno, které se stará o přijímání síťových zpráv.
+            </summary>
+        </member>
+        <member name="M:Piskvorky.Sitovani.precist">
+            <summary>
+            Stará se o přijímání síťových zpráv. Spouští se v samostatném vlákně.
+            </summary>
+        </member>
+        <member name="M:Piskvorky.Sitovani.Dispose">
+            <summary>
+            Zruší připojení.
+            </summary>
+        </member>
+        <member name="P:Piskvorky.Sitovani.Pripojeno">
+            <summary>
+            Je true, jestliže existuje nějaké připojení.
+            </summary>
+        </member>
+    </members>
+</doc>
